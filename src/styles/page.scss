@@ -1,0 +1,37 @@
+// Null
+@import url('./reset.scss');
+
+
+.page {
+    margin: 100px 0px 0px 0px;
+
+    @media (max-width: 1240px) {
+        margin: 90px 0px 0px 0px;
+    }
+    @media (max-width: 1024px) {
+        margin: 70px 0px 0px 0px;
+    }
+    @media (max-width: 540px) {
+        margin: 60px 0px 0px 0px;
+    }
+}
+
+
+// Layout
+@import url('./Layout/header.scss');
+@import url('./Layout/footer.scss');
+@import url('./Layout/headof.scss');
+
+// Главная страница
+@import url('./Home/mission.scss');
+@import url('./Home/h-news.scss');
+@import url('./Home/values.scss');
+@import url('./Home/tech.scss');
+@import url('./Home/slider.scss');
+
+// Новость
+@import url('./Article/article.scss');
+
+// Услуги и работы
+@import url('./Works/works.scss');
+@import url('./Works/work-popup.scss');
