@@ -37,21 +37,23 @@ const Header = () => {
         }
     }
 
+    const [hover, setHover] = React.useState(false)
+
     // 
     return (
         // <header className={scroll > 250 ? 'header scrolled' : 'header'}>
         <header className={classHeader()}>
             <div className="header__container">
                 <div className={toggle ? 'header__logo hidden' : 'header__logo'}>
-                    <img src={Logo} alt="qwdqw" />
+                    <img src={Logo} alt="qwdqw" onMouseEnter={() => setHover(false)} />
                 </div>
                 <div className="header__spisk">
                     <div className="header__spisk--ul">
-                        <li><a href="/">О нас</a></li>
+                        <li><a href="/" onMouseEnter={() => setHover(false)}>О нас</a></li>
                         <li>
-                        <a href="" className='trigger'>Услуги и работы</a>
-                        <div className="submenu">
-                            <div className="submenu__container">
+                        <a href="" onMouseEnter={() => setHover(true)}>Услуги и работы</a>
+                        <div className={hover ? "submenu hover" : "submenu"}>
+                            <div className="submenu__container" onMouseLeave={() => setHover(false)}>
                                 <div className="submenu__container--col">
                                     <p>Инженерные изыскания:</p>
                                     <ul>
@@ -103,9 +105,9 @@ const Header = () => {
                             </div>
                         </div>
                         </li>
-                        <li><a href="">Контакты</a></li>
+                        <li><a href="" onMouseEnter={() => setHover(false)}>Контакты</a></li>
                     </div>
-                    <button>Оставить заявку</button>
+                    <button onMouseEnter={() => setHover(false)}>Оставить заявку</button>
                 </div>
                 <div className={toggle ? 'header__icon active' : 'header__icon'} onClick={() => setToggle(!toggle)}>
                     <span className='header__icon--f'></span>
